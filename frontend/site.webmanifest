@@ -1,0 +1,26 @@
+{
+  "name": "Clinic - Medical Center",
+  "short_name": "Clinic",
+  "description": "Excellence in Healthcare with Compassionate Care",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#00c851",
+  "theme_color": "#00c851",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/img/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

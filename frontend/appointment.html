@@ -4,13 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Appointment - Clinic Bootstrap Template</title>
+  <title>Appointment </title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -44,8 +46,8 @@
     <div class="topbar d-flex align-items-center dark-background">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+<i class="bi bi-envelope d-flex align-items-center"><a href="mailto:codehubsolutions5@gmail.com">codehubsolutions5@gmail.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+254 783 832 901</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
           <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
@@ -123,10 +125,11 @@
             <div class="col-lg-8">
               <h1 class="heading-title">Appointment</h1>
               <p class="mb-0">
-                Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo
-                odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum
-                debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat
-                ipsum dolorem.
+                We are dedicated to eliminating division and resentment through
+                consistent effort and practice. Our goal is to create positive
+                outcomes while overcoming challenges. We believe in finding
+                balance and understanding, embracing the journey with patience
+                and compassion.
               </p>
             </div>
           </div>
@@ -186,19 +189,19 @@
               </div>
 
               <div class="appointment-form" data-aos="fade-up" data-aos-delay="400">
-                <form action="forms/book-appointment.php" method="post" class="php-email-form">
+                <form id="appointmentForm" class="php-email-form">
                   <div class="row gy-4">
                     <div class="col-md-6">
-                      <input type="text" name="name" class="form-control" placeholder="Full Name" required="">
+                      <input type="text" name="patientName" id="patientName" class="form-control" placeholder="Full Name" required="">
                     </div>
                     <div class="col-md-6">
-                      <input type="email" name="email" class="form-control" placeholder="Email Address" required="">
+                      <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" required="">
                     </div>
                     <div class="col-md-6">
-                      <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required="">
+                      <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone Number" required="">
                     </div>
                     <div class="col-md-6">
-                      <select name="department" class="form-select" required="">
+                      <select name="department" id="department" class="form-select" required="">
                         <option value="">Select Department</option>
                         <option value="general">General Consultation</option>
                         <option value="cardiology">Cardiology</option>
@@ -210,28 +213,28 @@
                       </select>
                     </div>
                     <div class="col-md-6">
-                      <input type="date" name="date" class="form-control" required="">
+                      <input type="datetime-local" name="dateTime" id="dateTime" class="form-control" required="">
                     </div>
                     <div class="col-md-6">
-                      <select name="doctor" class="form-select" required="">
+                      <select name="doctor" id="doctor" class="form-select" required="">
                         <option value="">Select Doctor</option>
-                        <option value="dr-sarah-johnson">Dr. Sarah Johnson</option>
-                        <option value="dr-michael-chen">Dr. Michael Chen</option>
-                        <option value="dr-emily-davis">Dr. Emily Davis</option>
-                        <option value="dr-robert-smith">Dr. Robert Smith</option>
-                        <option value="dr-lisa-brown">Dr. Lisa Brown</option>
-                        <option value="dr-david-wilson">Dr. David Wilson</option>
-                        <option value="dr-maria-rodriguez">Dr. Maria Rodriguez</option>
+                        <option value="Dr. Sarah Johnson">Dr. Sarah Johnson</option>
+                        <option value="Dr. Michael Chen">Dr. Michael Chen</option>
+                        <option value="Dr. Emily Davis">Dr. Emily Davis</option>
+                        <option value="Dr. Robert Smith">Dr. Robert Smith</option>
+                        <option value="Dr. Lisa Brown">Dr. Lisa Brown</option>
+                        <option value="Dr. David Wilson">Dr. David Wilson</option>
+                        <option value="Dr. Maria Rodriguez">Dr. Maria Rodriguez</option>
                       </select>
                     </div>
                     <div class="col-12">
-                      <textarea name="message" class="form-control" rows="4" placeholder="Additional notes or symptoms (optional)"></textarea>
+                      <textarea name="notes" id="notes" class="form-control" rows="4" placeholder="Additional notes or symptoms (optional)"></textarea>
                     </div>
                     <div class="col-12">
-                      <div class="loading">Loading</div>
-                      <div class="error-message"></div>
-                      <div class="sent-message">Your appointment has been scheduled. Thank you!</div>
-                      <button type="submit" class="btn-book">Book Appointment Now</button>
+                      <div class="loading" style="display: none;">Loading</div>
+                      <div class="error-message" style="display: none;"></div>
+                      <div class="sent-message" style="display: none;">Your appointment has been scheduled. Thank you!</div>
+                      <button type="submit" class="btn-book" id="submitBtn">Book Appointment Now</button>
                     </div>
                   </div>
                 </form>
@@ -272,11 +275,11 @@
                 </div>
                 <div class="contact-item">
                   <i class="bi bi-telephone"></i>
-                  <span>+1 (555) 987-6543</span>
+                  <span>+254 783 832901</span>
                 </div>
                 <div class="contact-item">
                   <i class="bi bi-envelope"></i>
-                  <span>hello@designstudio.com</span>
+                  <span>codehubsolutions5@gmail.com</span>
                 </div>
               </div>
             </div>
@@ -368,7 +371,7 @@
                   <!-- You can delete the links only if you've purchased the pro version. -->
                   <!-- Licensing information: https://bootstrapmade.com/license/ -->
                   <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+                  Designed by <a href="https://codehub-power-pack.vercel.app">CodeHub Software Solutions</a>
                 </div>
               </div>
             </div>
@@ -396,6 +399,67 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  
+  <!-- API Service -->
+  <script type="module">
+    import { createAppointment } from './assets/js/api.js';
+    
+    document.getElementById('appointmentForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Get form elements
+      const form = e.target;
+      const submitBtn = document.getElementById('submitBtn');
+      const loading = document.querySelector('.loading');
+      const errorMessage = document.querySelector('.error-message');
+      const sentMessage = document.querySelector('.sent-message');
+      
+      // Reset messages
+      errorMessage.style.display = 'none';
+      sentMessage.style.display = 'none';
+      
+      // Get form values
+      const appointmentData = {
+        patientName: document.getElementById('patientName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        department: document.getElementById('department').value,
+        doctor: document.getElementById('doctor').value,
+        dateTime: document.getElementById('dateTime').value,
+        notes: document.getElementById('notes').value,
+      };
+      
+      // Show loading
+      loading.style.display = 'block';
+      submitBtn.disabled = true;
+      
+      try {
+        const response = await createAppointment(appointmentData);
+        
+        // Hide loading
+        loading.style.display = 'none';
+        
+        if (response.success) {
+          // Show success message
+          sentMessage.style.display = 'block';
+          // Reset form
+          form.reset();
+        } else {
+          // Show error
+          errorMessage.textContent = response.error || 'Failed to create appointment';
+          errorMessage.style.display = 'block';
+        }
+      } catch (error) {
+        // Hide loading
+        loading.style.display = 'none';
+        // Show error
+        errorMessage.textContent = error.message || 'Failed to connect to server';
+        errorMessage.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
 
 </body>
 
